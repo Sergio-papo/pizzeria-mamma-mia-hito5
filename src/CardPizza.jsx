@@ -1,12 +1,15 @@
 const CardPizza = ({ name, price, ingredients, img }) => {
   return (
     <article className="card-pizza">
-      <img 
-  src={img} 
-  alt={name} 
-  className="pizza-img"
-  onError={(e) => e.target.src = "https://via.placeholder.com/300x200?text=Pizza"}
-/>
+      <img
+        src={img}
+        alt={name}
+        className="pizza-img"
+        onError={(e) => {
+          e.currentTarget.onerror = null
+          e.currentTarget.src = "/src/assets/img/pepperoni.jpg"
+        }}
+      />
 
       <div className="card-body">
         <h3>Pizza {name}</h3>
