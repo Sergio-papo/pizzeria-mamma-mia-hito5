@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { pizzas as pizzasLocal } from './pizzas'
+import { pizzas as pizzasLocal } from '../pizzas'
 
 const Pizza = () => {
   const [pizza, setPizza] = useState(null)

@@ -1,30 +1,23 @@
-const Navbar = ({ setView }) => {
-  const total = 25000
-  const token = false
+import { Link } from "react-router-dom";
+
+function Navbar() {
+  const total = 25000;
 
   return (
     <nav className="navbar">
-      <div className="nav-left">
-        <button onClick={() => setView('home')}>🍕 Home</button>
+      <Link to="/" className="navbar-brand">
+        Pizzería Mamma Mía
+      </Link>
 
-        {token ? (
-          <>
-            <button>🔓 Profile</button>
-            <button>🔒 Logout</button>
-          </>
-        ) : (
-          <>
-            <button onClick={() => setView('login')}>🔐 Login</button>
-            <button onClick={() => setView('register')}>🔐 Register</button>
-          </>
-        )}
-      </div>
-
-      <div className="nav-right">
-        <button>🛒 Total: ${total.toLocaleString('es-CL')}</button>
+      <div className="navbar-links">
+        <Link to="/">Home</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/cart">🛒 Total: ${total.toLocaleString("es-CL")}</Link>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
